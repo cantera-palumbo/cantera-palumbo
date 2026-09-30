@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-AR">
 <head>
 <meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K3M3CBR');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contacto y Cotización | Cantera Palumbo Mendoza</title>
 <meta name="description" content="Pedí tu cotización de áridos por WhatsApp. Cantera en Anchoris, Luján de Cuyo, y depósito en Godoy Cruz. Respuesta con precio y disponibilidad al instante.">
-<link rel="icon" type="image/png" sizes="48x48" href="uploads/img/favicon-48.png">
-<link rel="icon" type="image/png" sizes="512x512" href="uploads/img/favicon-512.png">
+<link rel="icon" type="image/png" href="uploads/img/favicon-logo.png">
 <link rel="apple-touch-icon" href="uploads/img/apple-touch-icon.png">
 <meta name="theme-color" content="#141311">
 <meta property="og:type" content="website">
@@ -14,9 +20,9 @@
 <meta property="og:site_name" content="Cantera Palumbo">
 <meta property="og:title" content="Contacto | Cantera Palumbo">
 <meta property="og:description" content="Pedí tu cotización por WhatsApp. Cantera en Anchoris y depósito en Godoy Cruz (lun a vie, 8 a 17 h).">
-<meta property="og:image" content="https://jofreflorenciam-art.github.io/cantera-palumbo/uploads/img/og-cantera-palumbo.jpg">
-<meta property="og:url" content="https://jofreflorenciam-art.github.io/cantera-palumbo/contacto.html">
-<link rel="canonical" href="https://jofreflorenciam-art.github.io/cantera-palumbo/contacto.html">
+<meta property="og:image" content="https://canterapalumbo.com/uploads/img/og-cantera-palumbo.jpg">
+<meta property="og:url" content="https://canterapalumbo.com/contacto.html">
+<link rel="canonical" href="https://canterapalumbo.com/contacto.html">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -32,6 +38,10 @@
 </template>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3M3CBR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <x-dc>
 
 <helmet>
@@ -42,6 +52,7 @@
     body { margin: 0; }
     a { color: #5f6f3d; text-underline-offset: 3px; }
     a:hover { color: #3d4a27; }
+    a[href*="wa.me"] * { pointer-events: none; } /* el clic cae en el link y GTM lee la URL */
     .cp-grayscale { filter: grayscale(1) contrast(1.1); }
     .cp-link { text-decoration: none; }
     .cp-desktop-nav, .cp-desktop-cta { display: flex; }
@@ -197,7 +208,7 @@
         <div style="margin-top:10px;"><a href="https://www.instagram.com/canterapalumbo/" target="_blank" rel="noopener" aria-label="Instagram de Cantera Palumbo" class="cp-link" style="color:rgba(20,19,17,0.72);font-size:14px;display:inline-flex;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset="0.05" stop-color="#fdf497"/><stop offset="0.45" stop-color="#fd5949"/><stop offset="0.6" stop-color="#d6249f"/><stop offset="0.9" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig-grad)"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.4" cy="7.6" r="1.1" fill="#fff"/></svg>Cantera Palumbo</a></div>
       </div>
     </div>
-    <div style="max-width:1400px;margin:0 auto;padding:20px 32px 40px;border-top:1px solid rgba(20,19,17,0.16);font-size:12px;color:rgba(20,19,17,0.64);">© {{ year }} Cantera Palumbo. Todos los derechos reservados.</div>
+    <div style="max-width:1400px;margin:0 auto;padding:20px 32px 40px;border-top:1px solid rgba(20,19,17,0.16);font-size:12px;color:rgba(20,19,17,0.64);">© {{ year }} Cantera Palumbo. Todos los derechos reservados. · <a href="legales.html" class="cp-link" style="color:rgba(20,19,17,0.72);">Términos y privacidad</a></div>
   </footer>
 
   <button onClick="{{ scrollTop }}" aria-label="Volver arriba" class="cp-totop" style="position:fixed;bottom:96px;right:24px;z-index:60;width:60px;height:60px;border-radius:50%;background:#141311;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.25);opacity:{{ showTopOpacity }};visibility:{{ showTopVisibility }};transition:opacity .3s;">
