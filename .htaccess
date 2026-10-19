@@ -1,0 +1,15 @@
+# Cantera Palumbo - web estática en Hostinger (reemplaza al WordPress)
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# www.canterapalumbo.com -> canterapalumbo.com
+RewriteCond %{HTTP_HOST} ^www\.canterapalumbo\.com$ [NC]
+RewriteRule ^ https://canterapalumbo.com%{REQUEST_URI} [L,R=301]
+
+# Direcciones viejas del WordPress -> inicio (redirección permanente 301)
+RewriteRule ^(2022/.*|category/.*|author/.*|elementor-1326/?|hola-mundo/?|feed/?|comments/feed/?|wp-admin.*|wp-login\.php|xmlrpc\.php|wp-json.*|.*-sitemap\.xml|sitemap_index\.xml|wp-sitemap\.xml)$ / [L,R=301]
+</IfModule>

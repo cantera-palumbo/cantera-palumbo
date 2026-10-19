@@ -27,6 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Cantera Palumbo","description":"Extracción y venta de áridos en Anchoris, Luján de Cuyo, Mendoza. Arena, ripio, estabilizado, tierra y piedra bola. Retiro en cantera o depósito y entrega en obra.","telephone":"+54 9 261 205-9198","image":"https://canterapalumbo.com/uploads/img/og-cantera-palumbo.jpg","logo":"https://canterapalumbo.com/uploads/LOGO-NUEVO-768x426.png","url":"https://canterapalumbo.com/","areaServed":"Gran Mendoza, Argentina","sameAs":["https://www.instagram.com/canterapalumbo/"],"department":[{"@type":"LocalBusiness","name":"Cantera Palumbo — Cantera Anchoris","telephone":"+54 9 261 205-9198","address":{"@type":"PostalAddress","streetAddress":"Ruta 40, km 51","addressLocality":"Anchoris, Luján de Cuyo","addressRegion":"Mendoza","addressCountry":"AR"}},{"@type":"LocalBusiness","name":"Cantera Palumbo — Depósito Godoy Cruz","telephone":"+54 9 261 205-9198","address":{"@type":"PostalAddress","streetAddress":"Juan Manuel Fangio 587","addressLocality":"Godoy Cruz","addressRegion":"Mendoza","addressCountry":"AR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Hacen entregas en obra?","acceptedAnswer":{"@type":"Answer","text":"Sí. Contamos con stock permanente y flota propia para despachar arena, ripio, estabilizado y tierra directo a la puerta de tu obra."}},{"@type":"Question","name":"¿Puedo retirar el material yo mismo?","acceptedAnswer":{"@type":"Answer","text":"Sí, podés retirar en cantera (Anchoris, Ruta 40 km 51, Luján de Cuyo) o en nuestro depósito de Godoy Cruz."}},{"@type":"Question","name":"¿Venden a particulares o solo a empresas?","acceptedAnswer":{"@type":"Answer","text":"A ambos. Atendemos desde grandes constructoras y obras públicas hasta pequeños consumidores particulares."}},{"@type":"Question","name":"¿A qué zonas entregan?","acceptedAnswer":{"@type":"Answer","text":"Entregamos en todo el Gran Mendoza: Godoy Cruz, Capital, Guaymallén, Maipú, Las Heras y Luján de Cuyo."}},{"@type":"Question","name":"¿No sé qué material necesito, me asesoran?","acceptedAnswer":{"@type":"Answer","text":"Sí. Contanos qué vas a hacer (contrapiso, base, relleno, hormigón) y te recomendamos el material y la cantidad."}},{"@type":"Question","name":"¿Cuál es el horario del depósito?","acceptedAnswer":{"@type":"Answer","text":"Lunes a viernes de 8 a 17 h. La carga en cantera se coordina por WhatsApp."}},{"@type":"Question","name":"¿Cómo pido una cotización?","acceptedAnswer":{"@type":"Answer","text":"Escribinos por WhatsApp con el material y la cantidad que necesitás, y te respondemos con precio y disponibilidad."}}]}</script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
@@ -58,6 +59,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     a[href*="wa.me"] * { pointer-events: none; } /* el clic cae en el link y GTM lee la URL */
     .cp-grayscale { filter: grayscale(1) contrast(1.1); }
     .cp-link { text-decoration: none; }
+    .cp-faq summary { list-style: none; }
+    .cp-faq summary::-webkit-details-marker { display: none; }
+    .cp-faq[open] .cp-faq-plus { transform: rotate(45deg); }
     .cp-desktop-nav, .cp-desktop-cta { display: flex; }
     .cp-mobile-btn { display: none; }
     .cp-btn-primary { background:#141311; color:#efeee9; }
@@ -215,27 +219,141 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="cp-prod-grid-m" style="border-top:2px solid rgba(20,19,17,0.28);padding-top:20px;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px;">
-        <sc-for list="{{ productsGrid }}" as="p" hint-placeholder-count="6">
-          <a href="productos.html" class="cp-link" style="display:flex;flex-direction:column;">
-            <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(20,19,17,0.15);margin-bottom:10px;"><img src="uploads/img/{{ p.slotId }}.webp" alt="{{ p.alt }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
-            <div style="font-weight:800;font-size:11px;color:rgba(20,19,17,0.56);margin-bottom:4px;">{{ p.n }}</div>
-            <div style="font-weight:900;font-size:16px;letter-spacing:-0.01em;margin-bottom:4px;color:#141311;">{{ p.name }}</div>
-            <div style="font-size:13px;line-height:1.35;color:rgba(20,19,17,0.72);text-wrap:pretty;">{{ p.desc }}</div>
+        <a href="productos.html" class="cp-link" style="display:flex;flex-direction:column;">
+            <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(20,19,17,0.15);margin-bottom:10px;"><img src="uploads/img/p-arena.webp" alt="Arena de Anchoris" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+            <div style="font-weight:800;font-size:11px;color:rgba(20,19,17,0.56);margin-bottom:4px;">01</div>
+            <div style="font-weight:900;font-size:16px;letter-spacing:-0.01em;margin-bottom:4px;color:#141311;">Arena</div>
+            <div style="font-size:13px;line-height:1.35;color:rgba(20,19,17,0.72);text-wrap:pretty;">Para mezclas, revoques y hormigones.</div>
           </a>
-        </sc-for>
+          <a href="productos.html" class="cp-link" style="display:flex;flex-direction:column;">
+            <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(20,19,17,0.15);margin-bottom:10px;"><img src="uploads/img/p-ripio.webp" alt="Ripio 6/20" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+            <div style="font-weight:800;font-size:11px;color:rgba(20,19,17,0.56);margin-bottom:4px;">02</div>
+            <div style="font-weight:900;font-size:16px;letter-spacing:-0.01em;margin-bottom:4px;color:#141311;">Ripio 6/20</div>
+            <div style="font-size:13px;line-height:1.35;color:rgba(20,19,17,0.72);text-wrap:pretty;">Hormigones y bases que requieren resistencia.</div>
+          </a>
+          <a href="productos.html" class="cp-link" style="display:flex;flex-direction:column;">
+            <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(20,19,17,0.15);margin-bottom:10px;"><img src="uploads/img/p-ripio50.webp" alt="Ripio 30/50" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+            <div style="font-weight:800;font-size:11px;color:rgba(20,19,17,0.56);margin-bottom:4px;">03</div>
+            <div style="font-weight:900;font-size:16px;letter-spacing:-0.01em;margin-bottom:4px;color:#141311;">Ripio 30/50</div>
+            <div style="font-size:13px;line-height:1.35;color:rgba(20,19,17,0.72);text-wrap:pretty;">Bases de mayor espesor y drenaje.</div>
+          </a>
+          <a href="productos.html" class="cp-link" style="display:flex;flex-direction:column;">
+            <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(20,19,17,0.15);margin-bottom:10px;"><img src="uploads/img/p-estabilizado.webp" alt="Material estabilizado" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+            <div style="font-weight:800;font-size:11px;color:rgba(20,19,17,0.56);margin-bottom:4px;">04</div>
+            <div style="font-weight:900;font-size:16px;letter-spacing:-0.01em;margin-bottom:4px;color:#141311;">Estabilizado</div>
+            <div style="font-size:13px;line-height:1.35;color:rgba(20,19,17,0.72);text-wrap:pretty;">Bases de caminos y accesos de obra.</div>
+          </a>
+          <a href="productos.html" class="cp-link" style="display:flex;flex-direction:column;">
+            <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(20,19,17,0.15);margin-bottom:10px;"><img src="uploads/img/p-tierra.webp" alt="Tierra de jardín" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+            <div style="font-weight:800;font-size:11px;color:rgba(20,19,17,0.56);margin-bottom:4px;">05</div>
+            <div style="font-weight:900;font-size:16px;letter-spacing:-0.01em;margin-bottom:4px;color:#141311;">Tierra de jardín</div>
+            <div style="font-size:13px;line-height:1.35;color:rgba(20,19,17,0.72);text-wrap:pretty;">Relleno y nivelación de terrenos.</div>
+          </a>
+          <a href="productos.html" class="cp-link" style="display:flex;flex-direction:column;">
+            <div style="aspect-ratio:4/3;border-radius:12px;overflow:hidden;box-shadow:0 10px 24px rgba(20,19,17,0.15);margin-bottom:10px;"><img src="uploads/img/p-piedrabola.webp" alt="Piedra bola" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+            <div style="font-weight:800;font-size:11px;color:rgba(20,19,17,0.56);margin-bottom:4px;">06</div>
+            <div style="font-weight:900;font-size:16px;letter-spacing:-0.01em;margin-bottom:4px;color:#141311;">Piedra bola</div>
+            <div style="font-size:13px;line-height:1.35;color:rgba(20,19,17,0.72);text-wrap:pretty;">Drenajes y terminaciones decorativas.</div>
+          </a>
       </div>
       <div class="cp-marquee cp-prod-marquee" style="border-top:2px solid rgba(20,19,17,0.28);overflow:hidden;">
         <div class="cp-marquee-track" style="display:flex;width:max-content;animation:cp-scroll-products 34s linear infinite;">
-          <sc-for list="{{ productsLoop }}" as="p" hint-placeholder-count="12">
-            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;">
-              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="{{ p.slotId }}" src="uploads/img/{{ p.slotId }}.webp" shape="rect" placeholder="{{ p.placeholder }}" alt="{{ p.alt }}"></image-slot></div>
+          <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-arena" src="uploads/img/p-arena.webp" shape="rect" placeholder="Foto: arena" alt="Arena de Anchoris para revoques y hormigones"></image-slot></div>
               <div style="padding:24px;">
-                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">{{ p.n }}</div>
-                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">{{ p.name }}</div>
-                <div style="font-size:14px;color:rgba(20,19,17,0.72);">{{ p.desc }}</div>
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">01</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Arena</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Para mezclas, revoques y hormigones.</div>
               </div>
             </a>
-          </sc-for>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-ripio" src="uploads/img/p-ripio.webp" shape="rect" placeholder="Foto: ripio 6/20" alt="Ripio 6/20 para hormigones y bases"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">02</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Ripio 6/20</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Hormigones y bases que requieren resistencia.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-ripio50" src="uploads/img/p-ripio50.webp" shape="rect" placeholder="Foto: ripio 30/50" alt="Ripio 30/50 para bases de mayor espesor"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">03</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Ripio 30/50</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Bases de mayor espesor y drenaje.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-estabilizado" src="uploads/img/p-estabilizado.webp" shape="rect" placeholder="Foto: estabilizado" alt="Material estabilizado para caminos y accesos de obra"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">04</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Estabilizado</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Bases de caminos y accesos de obra.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-tierra" src="uploads/img/p-tierra.webp" shape="rect" placeholder="Foto: tierra" alt="Tierra de jardín para relleno y nivelación"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">05</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Tierra de jardín</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Relleno y nivelación de terrenos.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-piedrabola" src="uploads/img/p-piedrabola.webp" shape="rect" placeholder="Foto: piedra bola" alt="Piedra bola para drenajes y terminaciones"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">06</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Piedra bola</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Drenajes y terminaciones decorativas.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;" aria-hidden="true" tabindex="-1">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-arena" src="uploads/img/p-arena.webp" shape="rect" placeholder="Foto: arena" alt="Arena de Anchoris para revoques y hormigones"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">01</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Arena</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Para mezclas, revoques y hormigones.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;" aria-hidden="true" tabindex="-1">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-ripio" src="uploads/img/p-ripio.webp" shape="rect" placeholder="Foto: ripio 6/20" alt="Ripio 6/20 para hormigones y bases"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">02</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Ripio 6/20</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Hormigones y bases que requieren resistencia.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;" aria-hidden="true" tabindex="-1">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-ripio50" src="uploads/img/p-ripio50.webp" shape="rect" placeholder="Foto: ripio 30/50" alt="Ripio 30/50 para bases de mayor espesor"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">03</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Ripio 30/50</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Bases de mayor espesor y drenaje.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;" aria-hidden="true" tabindex="-1">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-estabilizado" src="uploads/img/p-estabilizado.webp" shape="rect" placeholder="Foto: estabilizado" alt="Material estabilizado para caminos y accesos de obra"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">04</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Estabilizado</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Bases de caminos y accesos de obra.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;" aria-hidden="true" tabindex="-1">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-tierra" src="uploads/img/p-tierra.webp" shape="rect" placeholder="Foto: tierra" alt="Tierra de jardín para relleno y nivelación"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">05</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Tierra de jardín</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Relleno y nivelación de terrenos.</div>
+              </div>
+            </a>
+            <a href="productos.html" class="cp-link cp-prod-card" style="display:flex;flex-direction:column;width:280px;flex:none;margin:0 8px;" aria-hidden="true" tabindex="-1">
+              <div style="aspect-ratio:4/3;transition:filter .25s;border-radius:16px;overflow:hidden;box-shadow:0 16px 36px rgba(20,19,17,0.15);"><image-slot id="p-piedrabola" src="uploads/img/p-piedrabola.webp" shape="rect" placeholder="Foto: piedra bola" alt="Piedra bola para drenajes y terminaciones"></image-slot></div>
+              <div style="padding:24px;">
+                <div style="font-weight:800;font-size:13px;color:rgba(20,19,17,0.56);margin-bottom:8px;">06</div>
+                <div style="font-weight:900;font-size:20px;letter-spacing:-0.01em;margin-bottom:6px;color:#141311;">Piedra bola</div>
+                <div style="font-size:14px;color:rgba(20,19,17,0.72);">Drenajes y terminaciones decorativas.</div>
+              </div>
+            </a>
         </div>
       </div>
     </div>
@@ -375,17 +493,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h6 style="font-size:12px;font-weight:800;letter-spacing:0.14em;color:#5f6f3d;margin:0 0 16px;">PREGUNTAS FRECUENTES</h6>
         <h2 style="font-weight:900;font-size:clamp(30px,3.4vw,48px);line-height:1.06;letter-spacing:-0.015em;margin:0 0 32px;">Lo que preguntan antes de pedir.</h2>
         <div style="border-top:2px solid rgba(20,19,17,0.28);">
-          <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
-            <div style="border-bottom:2px solid rgba(20,19,17,0.28);">
-              <button onClick="{{ f.toggle }}" style="width:100%;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;text-align:left;color:#141311;font-family:'Archivo',system-ui,sans-serif;">
-                <span style="font-weight:800;font-size:16px;">{{ f.q }}</span>
-                <span style="flex:none;font-weight:900;font-size:20px;color:#5f6f3d;transform:{{ f.rotate }};transition:transform .2s;display:inline-block;">+</span>
-              </button>
-              <sc-if value="{{ f.open }}">
-                <p style="margin:0 0 24px;font-size:15px;color:rgba(20,19,17,0.74);max-width:640px;">{{ f.a }}</p>
-              </sc-if>
-            </div>
-          </sc-for>
+          <details class="cp-faq" open="true" style="border-bottom:2px solid rgba(20,19,17,0.28);">
+              <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;color:#141311;font-family:'Archivo',system-ui,sans-serif;">
+                <span style="font-weight:800;font-size:16px;">¿Hacen entregas en obra?</span>
+                <span class="cp-faq-plus" style="flex:none;font-weight:900;font-size:20px;color:#5f6f3d;transition:transform .2s;display:inline-block;">+</span>
+              </summary>
+              <p style="margin:0 0 24px;font-size:15px;color:rgba(20,19,17,0.74);max-width:640px;">Sí. Contamos con stock permanente y flota propia para despachar arena, ripio, estabilizado y tierra directo a la puerta de tu obra.</p>
+            </details>
+            <details class="cp-faq" style="border-bottom:2px solid rgba(20,19,17,0.28);">
+              <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;color:#141311;font-family:'Archivo',system-ui,sans-serif;">
+                <span style="font-weight:800;font-size:16px;">¿Puedo retirar el material yo mismo?</span>
+                <span class="cp-faq-plus" style="flex:none;font-weight:900;font-size:20px;color:#5f6f3d;transition:transform .2s;display:inline-block;">+</span>
+              </summary>
+              <p style="margin:0 0 24px;font-size:15px;color:rgba(20,19,17,0.74);max-width:640px;">Sí, podés retirar en cantera (Anchoris, Ruta 40 km 51, Luján de Cuyo) o en nuestro depósito de Godoy Cruz.</p>
+            </details>
+            <details class="cp-faq" style="border-bottom:2px solid rgba(20,19,17,0.28);">
+              <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;color:#141311;font-family:'Archivo',system-ui,sans-serif;">
+                <span style="font-weight:800;font-size:16px;">¿Venden a particulares o solo a empresas?</span>
+                <span class="cp-faq-plus" style="flex:none;font-weight:900;font-size:20px;color:#5f6f3d;transition:transform .2s;display:inline-block;">+</span>
+              </summary>
+              <p style="margin:0 0 24px;font-size:15px;color:rgba(20,19,17,0.74);max-width:640px;">A ambos. Atendemos desde grandes constructoras y obras públicas hasta pequeños consumidores particulares.</p>
+            </details>
+            <details class="cp-faq" style="border-bottom:2px solid rgba(20,19,17,0.28);">
+              <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;color:#141311;font-family:'Archivo',system-ui,sans-serif;">
+                <span style="font-weight:800;font-size:16px;">¿A qué zonas entregan?</span>
+                <span class="cp-faq-plus" style="flex:none;font-weight:900;font-size:20px;color:#5f6f3d;transition:transform .2s;display:inline-block;">+</span>
+              </summary>
+              <p style="margin:0 0 24px;font-size:15px;color:rgba(20,19,17,0.74);max-width:640px;">Entregamos en todo el Gran Mendoza: Godoy Cruz, Capital, Guaymallén, Maipú, Las Heras y Luján de Cuyo.</p>
+            </details>
+            <details class="cp-faq" style="border-bottom:2px solid rgba(20,19,17,0.28);">
+              <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;color:#141311;font-family:'Archivo',system-ui,sans-serif;">
+                <span style="font-weight:800;font-size:16px;">¿No sé qué material necesito, me asesoran?</span>
+                <span class="cp-faq-plus" style="flex:none;font-weight:900;font-size:20px;color:#5f6f3d;transition:transform .2s;display:inline-block;">+</span>
+              </summary>
+              <p style="margin:0 0 24px;font-size:15px;color:rgba(20,19,17,0.74);max-width:640px;">Sí. Contanos qué vas a hacer (contrapiso, base, relleno, hormigón) y te recomendamos el material y la cantidad.</p>
+            </details>
+            <details class="cp-faq" style="border-bottom:2px solid rgba(20,19,17,0.28);">
+              <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;color:#141311;font-family:'Archivo',system-ui,sans-serif;">
+                <span style="font-weight:800;font-size:16px;">¿Cuál es el horario del depósito?</span>
+                <span class="cp-faq-plus" style="flex:none;font-weight:900;font-size:20px;color:#5f6f3d;transition:transform .2s;display:inline-block;">+</span>
+              </summary>
+              <p style="margin:0 0 24px;font-size:15px;color:rgba(20,19,17,0.74);max-width:640px;">Lunes a viernes de 8 a 17 h. La carga en cantera se coordina por WhatsApp.</p>
+            </details>
+            <details class="cp-faq" style="border-bottom:2px solid rgba(20,19,17,0.28);">
+              <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer;color:#141311;font-family:'Archivo',system-ui,sans-serif;">
+                <span style="font-weight:800;font-size:16px;">¿Cómo pido una cotización?</span>
+                <span class="cp-faq-plus" style="flex:none;font-weight:900;font-size:20px;color:#5f6f3d;transition:transform .2s;display:inline-block;">+</span>
+              </summary>
+              <p style="margin:0 0 24px;font-size:15px;color:rgba(20,19,17,0.74);max-width:640px;">Escribinos por WhatsApp con el material y la cantidad que necesitás, y te respondemos con precio y disponibilidad.</p>
+            </details>
         </div>
       </div>
     </div>
@@ -431,7 +587,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div style="margin-top:10px;"><a href="https://www.instagram.com/canterapalumbo/" target="_blank" rel="noopener" aria-label="Instagram de Cantera Palumbo" class="cp-link" style="color:rgba(20,19,17,0.72);font-size:14px;display:inline-flex;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset="0.05" stop-color="#fdf497"/><stop offset="0.45" stop-color="#fd5949"/><stop offset="0.6" stop-color="#d6249f"/><stop offset="0.9" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig-grad)"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.4" cy="7.6" r="1.1" fill="#fff"/></svg>Cantera Palumbo</a></div>
       </div>
     </div>
-    <div style="max-width:1600px;margin:0 auto;padding:20px 32px 40px;border-top:1px solid rgba(20,19,17,0.16);font-size:12px;color:rgba(20,19,17,0.64);">© {{ year }} Cantera Palumbo. Todos los derechos reservados. · <a href="legales.html" class="cp-link" style="color:rgba(20,19,17,0.72);">Términos y privacidad</a></div>
+    <div style="max-width:1600px;margin:0 auto;padding:20px 32px 40px;border-top:1px solid rgba(20,19,17,0.16);font-size:12px;color:rgba(20,19,17,0.64);">© Cantera Palumbo. Todos los derechos reservados. · <a href="legales.html" class="cp-link" style="color:rgba(20,19,17,0.72);">Términos y privacidad</a></div>
   </footer>
 
   <button onClick="{{ scrollTop }}" aria-label="Volver arriba" class="cp-totop" style="position:fixed;bottom:96px;right:24px;z-index:60;width:60px;height:60px;border-radius:50%;background:#141311;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.25);opacity:{{ showTopOpacity }};visibility:{{ showTopVisibility }};transition:opacity .3s;">
